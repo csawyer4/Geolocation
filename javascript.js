@@ -5,3 +5,5 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     maxZoom: 18,
     id: 'mapbox/streets-v10',
 }).addTo(map);
+
+map.locate({setView: true, maxZoom: 16});
