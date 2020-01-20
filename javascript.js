@@ -16,6 +16,12 @@ var dark = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?
 
 var map = L.map('map', {layers:[light]}).fitWorld();
 
+var baseMaps= {
+  "Light": light,
+  "Dark": dark
+};
+
+L.control.layers(baseMaps).addTo(map);
 
 function onLocationFound(e) {
     var radius = e.accuracy; //this defines a variable radius as the accuracy value returned by the locate method divided by 2. It is divided by 2 because the accuracy value is the sum of the estimated accuracy of the latitude plus the estimated accuracy of the longitude. The unit is meters.
